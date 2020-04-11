@@ -1,0 +1,18 @@
+$ editor identifier.y
+$ editor identifier.l
+$ editor identifier.y
+$ lex identifier.l
+$ yacc -d identifier.y
+$ cc lex.yy.c y.tab.c -lfl
+$ ./a.out
+Enter the name to test for identifier:
+student
+valid identifier
+$ ./a.out
+Enter the name to test for identifier:
+_student
+valid identifier
+$ ./a.out
+Enter the name to test for identifier:
+4student
+Invalid identifier!!
